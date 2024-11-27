@@ -1,59 +1,42 @@
-# vote-crud
-#Aplicación de Votación en Tiempo Real
-#Descripción
-Es una aplicación web interactiva de votación desarrollada con tecnologías modernas como: Node.js, Express y Socket.IO, de JavaScript. Permite a los usuarios crear, editar y votar en temas de manera dinámica y en tiempo real.
+# Aplicación de Votación CRUD
 
-#Características principales:
+Esta es una aplicación CRUD (Crear, Leer, Actualizar, Eliminar) simple para gestionar votos.
 
-Creación instantánea de temas de discusión
-Sistema de votación en tiempo real con actualización inmediata
-Interfaz de usuario intuitiva y responsiva
-Persistencia de datos utilizando SQLite
-Comunicación en tiempo real mediante WebSockets
-Funcionalidades de CRUD (Crear, Leer, Actualizar, Eliminar) para temas
-La aplicación está diseñada para ser:
+## Descripción
 
-Fácil de usar
-Rápida y eficiente
-Escalable
-Ideal para entornos colaborativos, reuniones, eventos o cualquier escenario donde se requiera recopilar opiniones o votos de manera interactiva
+Esta aplicación permite a los usuarios gestionar votos a través de una interfaz web. Los usuarios pueden crear nuevos votos, ver los votos existentes, actualizar la información de los votos y eliminar votos.
 
-#Tecnologías Utilizadas
-Node.js
-Express
-Socket.IO
-EJS (Motor de plantillas)
-Body-Parser
+## Características
 
-#Configuración del Proyecto
-Requisitos Previos
-Node.js instalado
-npm (Node Package Manager)
+- Crear nuevos votos
+- Ver todos los votos
+- Actualizar votos existentes
+- Eliminar votos
+- Interfaz amigable para el usuario
 
-#Instalación
-Clonar el repositorio
-bash
-Insert Code
-Edit
-Copy code
-git clone <url-del-repositorio>
+## Instalación
 
-#Instalar dependencias
-bash
-Insert Code
-Edit
-Copy code
-npm install
-Iniciar el servidor
-bash
-Insert Code
-Edit
-Copy code
-node app.js
+1. Clonar el repositorio:
+```bash
+git clone [url-de-tu-repositorio]
+```
 
-#Funcionalidades
-Crear temas de votación
-Votar en tiempo real
-Actualización dinámica de resultados
-#Ejecución
-Navegar a http://localhost:3000 en tu navegador
+2. Crear y activar un entorno virtual:
+```bash
+python -m venv venv
+source venv/bin/activate  # En Windows usar: venv\Scripts\activate
+```
+
+3. Instalar dependencias:
+```bash
+pip install -r requirements.txt
+```
+
+## Uso
+
+1. Iniciar la aplicación:
+```bash
+python app.py
+```
+
+2. Abrir el navegador web y navegar a `http://localhost:3000`
