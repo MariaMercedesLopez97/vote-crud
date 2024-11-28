@@ -40,3 +40,6 @@ python app.py
 ```
 
 2. Abrir el navegador web y navegar a `http://localhost:3000`
+
+
+

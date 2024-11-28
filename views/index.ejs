@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Votación</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Votación</h1>
+        
+        <!-- Formulario para agregar nuevo tema -->
+        <div class="form-container">
+            <h2>Agregar Nuevo Tema</h2>
+            <form id="agregarTemaForm" action="/temas" method="POST">
+                <input type="text" name="title" placeholder="Ingrese un nuevo tema" required>
+                <button type="submit">Agregar Tema</button>
+            </form>
+        </div>
+
+        <!-- Lista de temas -->
+        <div class="temas-container">
+            <h2>Temas</h2>
+            <ul id="listaTemas">
+                <% if (topics && topics.length > 0) { %>
+                    <% topics.forEach(topic => { %>
+                        <li class="tema-item" data-id="<%= topic.id %>">
+                            <div class="tema-contenido">
+                                <span class="tema-titulo"><%= topic.title %></span>
+                                <span class="votos-count">Votos: <%= topic.votes %></span>
+                            </div>
+                            <div class="tema-acciones">
+                                <button class="votar-btn" onclick="votar(<%= topic.id %>)">Votar</button>
+                                <button class="editar-btn" onclick="mostrarEditar(<%= topic.id %>, '<%= topic.title %>')">Editar</button>
+                                <button class="eliminar-btn" onclick="eliminarTema(<%= topic.id %>)">Eliminar</button>
+                            </div>
+                        </li>
+                    <% }); %>
+                <% } else { %>
+                    <li>No hay temas disponibles</li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal de edición -->
+    <div id="editarModal" class="modal">
+        <div class="modal-content">
+            <h2>Editar Tema</h2>
+            <form id="editarTemaForm">
+                <input type="hidden" id="editarTemaId">
+                <input type="text" id="editarTemaTitulo" required>
+                <div class="modal-buttons">
+                    <button type="submit">Guardar</button>
+                    <button type="button" onclick="cerrarModal()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
